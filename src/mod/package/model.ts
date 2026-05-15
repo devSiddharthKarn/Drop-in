@@ -9,7 +9,7 @@ interface IPackage{
     publicId:string,
     secureURL:string,
     originalName:string,
-    mimeType:string,
+    resourceType:string,
     
     url:string,
     uploadedAt:Date,
@@ -26,6 +26,7 @@ const Packages = pgTable("Packages",{
     publicId:text("public_id").notNull(),
     secureURL:text("secure_url").notNull(),
     originalName:text("original_name").notNull(),
+    resourceType:text("resource_type").notNull(),
 
     url:text("url").notNull(),
     uploadedAt:timestamp("uploaded_at").notNull().defaultNow(),

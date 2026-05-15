@@ -70,6 +70,7 @@ class PackageService {
                     publicId:r.public_id,
                     secureURL:r.secure_url,
                     originalName:r.original_filename,
+                    resourceType:r.resource_type,
 
                     url: r.secure_url,
                     uploadedAt: now,
