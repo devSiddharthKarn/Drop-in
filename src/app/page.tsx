@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, ChangeEvent, useRef, useState } from "react";
+import { FormEvent, ChangeEvent, DragEvent, useRef, useState } from "react";
 import styles from "./page.module.css";
 
 type UploadedTokenResponse = {
@@ -84,9 +84,28 @@ export default function Home() {
   const [downloadingId, setDownloadingId] = useState<string | null>(null);
   const [downloadingAll, setDownloadingAll] = useState(false);
   const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
+  const [isDragging, setIsDragging] = useState(false);
 
   const onFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFiles(Array.from(event.target.files ?? []));
+  };
+
+  const handleDragOver = (event: DragEvent<HTMLLabelElement>) => {
+    event.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (event: DragEvent<HTMLLabelElement>) => {
+    event.preventDefault();
+    setIsDragging(false);
+    const droppedFiles = Array.from(event.dataTransfer.files ?? []);
+    if (droppedFiles.length > 0) {
+      setFiles(droppedFiles);
+    }
   };
 
   const removeSelectedFile = (indexToRemove: number) => {
@@ -318,10 +337,20 @@ export default function Home() {
           <form className={styles.form} onSubmit={handleUpload}>
             <div className={styles.uploadGrid}>
               <div className={styles.uploadMain}>
-                <label className={styles.uploadZone}>
+                <label
+                  className={`${styles.uploadZone} ${isDragging ? styles.uploadZoneActive : ""}`}
+                  onDragOver={handleDragOver}
+                  onDragLeave={handleDragLeave}
+                  onDrop={handleDrop}
+                >
                   <input ref={fileInputRef} type="file" multiple onChange={onFileChange} />
                   <strong>Select one or more files</strong>
                   <span>All selected files are grouped into one token package.</span>
+                  <div className={styles.dropHint}>
+                    <div className={styles.dropIcon}>⇣</div>
+                    <p>Drag and drop files here</p>
+                    <span>Or click to browse from your device</span>
+                  </div>
                 </label>
 
                 {files.length > 0 ? (
