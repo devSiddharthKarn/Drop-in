@@ -293,6 +293,11 @@ export default function Home() {
               Upload files, generate one share token, and let recipients instantly receive each file
               or download all files at once. Built for quick share, clean access, and a simple flow.
             </p>
+            <p>
+              Drop-in is a quick file sharing tool for teams and individuals who need to share files
+              fast, send large files, and access downloads from any device. If you searched for quick
+              share, file sharing, or simple file transfer, this is the workflow you want.
+            </p>
 
             <div className={styles.heroPoints} aria-label="Highlights">
               <span>Quick upload</span>
@@ -511,8 +516,31 @@ export default function Home() {
           share a token, and let others access files from any device.
         </p>
         <p>
+          It is a simple file transfer option for fast file sharing, quick access, and easy
+          downloads. Share files securely, send a token, and keep collaboration moving.
+        </p>
+        <p>
           The token model is great for short-lived collaboration. It helps keep sharing direct,
           discoverable, and easy to manage.
+        </p>
+      </section>
+
+      <section className={styles.contentBlock} aria-label="Secure and fast file sharing">
+        <h2>Secure, simple, and fast file sharing</h2>
+        <p>
+          Drop-in is built for secure file sharing without the noise. Upload your files, receive a
+          share token, and let the recipient download securely. If you are searching for secure file
+          transfer, private file sharing, or a quick way to send files online, this flow is designed
+          to match that intent.
+        </p>
+        <p>
+          Use Drop-in for sending large files, sharing documents with a team, moving assets between
+          devices, or delivering files to a client. It is a practical answer to searches like
+          “share files fast,” “send files quickly,” “simple file transfer,” and “quick share link.”
+        </p>
+        <p>
+          You can share one file or many, keep the process lightweight, and avoid complicated setup.
+          The goal is clear: secure uploads, fast access, and reliable downloads.
         </p>
       </section>
 
