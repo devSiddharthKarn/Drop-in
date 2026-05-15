@@ -250,6 +250,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .selectionHead p,
@@ -452,6 +453,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .resultButtons {
@@ -650,6 +652,16 @@
     align-items: flex-start;
   }
 
+  .fileMeta strong,
+  .resultMeta strong {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .heroPoints span {
+    font-size: 0.82rem;
+  }
+
   .fileActions {
     width: 100%;
     justify-content: space-between;
@@ -658,6 +670,7 @@
   .resultButtons,
   .receiveActions {
     width: 100%;
+    flex-direction: column;
   }
 
   .secondaryButton,
@@ -666,6 +679,7 @@
   }
 
   .wordmark {
-    right: 6px;
+    margin: 0 0 10px 0;
+    font-size: clamp(2.4rem, 11vw, 3.8rem);
   }
 }
