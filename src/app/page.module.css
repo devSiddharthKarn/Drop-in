@@ -1,40 +1,35 @@
 .page {
-  width: min(1220px, 100%);
+  width: min(1200px, 100%);
   margin: 0 auto;
-  padding: 58px 24px 86px;
+  padding: 48px 20px 72px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 20px;
 }
 
 .top {
-  position: relative;
-  border-radius: 30px;
-  padding: 6px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .wordmark {
-  position: relative;
-  margin: 0 0 16px 4px;
-  font-size: clamp(3.9rem, 10vw, 10rem);
+  font-size: clamp(2.6rem, 7vw, 5rem);
   line-height: 1;
   font-weight: 800;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   color: var(--foreground);
 }
 
 .heroCard {
-  position: relative;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 30px;
+  padding: 24px;
   border: 1px solid var(--border);
-  border-radius: 30px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(249, 250, 251, 0.78));
+  border-radius: 24px;
+  background: white;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(20px);
 }
 
 .brandBlast {
@@ -42,18 +37,20 @@
 }
 
 .heroContent {
-  position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .brandRow {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .logo {
-  border-radius: 14px;
+  border-radius: 12px;
   border: 1px solid var(--border);
   background: white;
   padding: 4px;
@@ -62,14 +59,13 @@
 .themeLine {
   color: var(--muted);
   font-size: 0.95rem;
-  margin-top: 5px;
 }
 
 .badge {
   width: fit-content;
   border-radius: 999px;
-  padding: 7px 12px;
-  font-size: 0.75rem;
+  padding: 6px 10px;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -78,72 +74,68 @@
 }
 
 .heroCard h1 {
-  max-width: 18ch;
-  font-size: clamp(2rem, 4.8vw, 4.6rem);
-  line-height: 0.97;
-  letter-spacing: -0.06em;
-  text-wrap: balance;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
 .heroCard p {
-  max-width: 74ch;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .heroPoints {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .heroPoints span {
-  padding: 9px 13px;
+  padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.75);
   border: 1px solid var(--border);
-  font-size: 0.89rem;
+  font-size: 0.82rem;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .workflow {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .panel,
 .contentBlock {
   border: 1px solid var(--border);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
-  padding: 22px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  padding: 20px;
 }
 
 .panelHead {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .panelCopy {
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.5;
   margin-top: 6px;
 }
 
 .tokenLabel {
   color: var(--accent-strong);
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 .panel h2,
 .contentBlock h2 {
-  font-size: clamp(1.25rem, 2vw, 1.8rem);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  line-height: 1.2;
 }
 
 .form {
@@ -152,19 +144,15 @@
   gap: 12px;
 }
 
-.uploadGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 16px;
-}
-
-.uploadMain,
-.receiveMain {
+.uploadGrid,
+.receiveGrid {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
+.uploadMain,
+.receiveMain,
 .uploadSide,
 .receiveSide {
   display: flex;
@@ -180,30 +168,31 @@
 }
 
 .uploadZone {
-  border: 1.5px dashed rgba(15, 118, 110, 0.3);
-  background: linear-gradient(180deg, rgba(15, 118, 110, 0.07), rgba(15, 118, 110, 0.015));
-  border-radius: 18px;
-  padding: 14px;
+  border: 1px dashed rgba(15, 118, 110, 0.3);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(15, 118, 110, 0.04);
 }
 
 .uploadZone input {
   color: rgba(15, 23, 42, 0.8);
-  font-size: 0.93rem;
+  font-size: 0.9rem;
 }
 
 .uploadZone input::file-selector-button {
   border: 0;
   border-radius: 999px;
-  padding: 9px 13px;
-  margin-right: 10px;
+  padding: 7px 10px;
+  margin-right: 8px;
   background: var(--accent);
   color: white;
   cursor: pointer;
   font-weight: 700;
+  font-size: 0.82rem;
 }
 
 .uploadZone strong {
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 .uploadZone span {
@@ -212,23 +201,18 @@
 }
 
 .field span {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
 .field input {
   width: 100%;
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 12px 14px;
+  border-radius: 12px;
+  padding: 10px 12px;
   background: white;
   color: var(--foreground);
   outline: none;
-}
-
-.field input:focus {
-  border-color: rgba(15, 118, 110, 0.48);
-  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
 }
 
 .fileList,
@@ -245,12 +229,11 @@
   gap: 10px;
 }
 
-.selectionHead {
+.selectionHead,
+.resultHead {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .selectionHead p,
@@ -265,43 +248,35 @@
 .step,
 .faqItem {
   border: 1px solid var(--border);
-  border-radius: 16px;
-  background: rgba(248, 250, 252, 0.9);
+  border-radius: 14px;
+  background: #f8fafc;
 }
 
 .fileItem {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-}
-
-.fileMeta {
-  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
 }
 
 .fileMeta strong,
 .resultMeta strong {
   display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-break: break-word;
 }
 
 .fileMeta p {
   color: var(--muted);
   margin-top: 4px;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
 
 .filePill {
-  flex-shrink: 0;
   border-radius: 999px;
-  padding: 6px 10px;
+  padding: 4px 8px;
   background: rgba(15, 118, 110, 0.1);
   color: var(--accent-strong);
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -309,55 +284,38 @@
 
 .fileActions {
   display: flex;
-  align-items: center;
   gap: 8px;
-  flex-shrink: 0;
+  flex-wrap: wrap;
 }
 
 .fileRemoveButton {
   border: 0;
   background: transparent;
   color: #b45309;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
-}
-
-.fileRemoveButton:hover {
-  text-decoration: underline;
 }
 
 .primaryButton,
-.secondaryButton {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  padding: 11px 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.15s ease;
-}
-
+.secondaryButton,
 .ghostButton {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   border-radius: 999px;
-  border: 1px dashed rgba(15, 118, 110, 0.3);
-  padding: 11px 15px;
-  background: transparent;
-  color: var(--accent-strong);
+  border: 1px solid transparent;
+  padding: 8px 10px;
   font-weight: 700;
+  font-size: 0.86rem;
+  line-height: 1.2;
+  min-width: 0;
+  width: 100%;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
   cursor: pointer;
-}
-
-.ghostButton:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
 }
 
 .primaryButton {
@@ -371,15 +329,10 @@
   color: var(--foreground);
 }
 
-.primaryButton:hover:not(:disabled),
-.secondaryButton:hover:not(:disabled) {
-  transform: translateY(-1px);
-}
-
-.primaryButton:disabled,
-.secondaryButton:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
+.ghostButton {
+  background: transparent;
+  border: 1px dashed rgba(15, 118, 110, 0.3);
+  color: var(--accent-strong);
 }
 
 .helperText {
@@ -389,36 +342,35 @@
 
 .tokenPanel {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 10px;
   padding: 12px;
 }
 
 .tokenPlaceholder {
   border: 1px dashed rgba(15, 118, 110, 0.3);
-  border-radius: 16px;
-  padding: 14px;
+  border-radius: 14px;
+  padding: 12px;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 
 .summaryCard {
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 14px;
-  background: rgba(248, 250, 252, 0.92);
+  border-radius: 16px;
+  padding: 12px;
+  background: #f8fafc;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .summaryLabel {
   color: var(--accent-strong);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
 }
 
@@ -429,11 +381,6 @@
   gap: 8px;
   color: var(--foreground);
   font-weight: 700;
-}
-
-.summaryRow span {
-  color: var(--muted);
-  font-weight: 600;
 }
 
 .summaryActions {
@@ -448,91 +395,59 @@
   gap: 12px;
 }
 
-.resultHead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
 .resultButtons {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
 }
 
 .resultItem {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 14px;
-}
-
-.resultMeta {
-  min-width: 0;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
 }
 
 .resultMeta p {
   color: var(--foreground);
   font-weight: 700;
-  margin-top: 5px;
-}
-
-.resultMeta span {
-  display: block;
-  color: var(--muted);
   margin-top: 4px;
-  line-height: 1.45;
-  font-size: 0.9rem;
 }
 
 .resultStats {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   margin-top: 4px;
 }
 
 .resultStats span {
   border-radius: 999px;
-  padding: 5px 9px;
+  padding: 4px 8px;
   background: rgba(15, 118, 110, 0.08);
   color: var(--accent-strong);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
 }
 
 .resultLink {
   display: inline-flex;
-  margin-top: 8px;
+  margin-top: 6px;
   color: var(--accent-strong);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
-}
-
-.resultLink:hover {
-  text-decoration: underline;
-}
-
-.receiveGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
-  gap: 16px;
-  align-items: start;
 }
 
 .receiveActions {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .emptyState {
   border: 1px dashed rgba(15, 118, 110, 0.3);
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 14px;
+  padding: 12px;
   color: var(--muted);
   display: flex;
   flex-direction: column;
@@ -544,26 +459,21 @@
   color: var(--foreground);
 }
 
-.resultItem p {
-  color: var(--muted);
-  margin-top: 6px;
-  line-height: 1.45;
-}
-
 .contentBlock {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .contentBlock p {
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-.steps {
+.steps,
+.faqGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
@@ -590,12 +500,6 @@
   line-height: 1.55;
 }
 
-.faqGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-
 .faqItem {
   padding: 12px;
 }
@@ -610,76 +514,38 @@
   line-height: 1.55;
 }
 
-@media (max-width: 980px) {
-  .workflow,
+@media (min-width: 720px) {
   .uploadGrid,
-  .receiveGrid,
-  .steps,
-  .faqGrid {
-    grid-template-columns: 1fr;
+  .receiveGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .wordmark {
-    margin: 0 0 12px 2px;
-    font-size: clamp(2.6rem, 10vw, 4.4rem);
+  .primaryButton,
+  .secondaryButton,
+  .ghostButton {
+    width: auto;
   }
 
-  .heroCard h1 {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 640px) {
-  .page {
-    padding: 24px 14px 44px;
-    gap: 14px;
-  }
-
-  .heroCard,
-  .panel,
-  .contentBlock {
-    border-radius: 20px;
-    padding: 16px;
-  }
-
-  .brandRow,
   .selectionHead,
-  .resultHead,
-  .tokenPanel,
-  .resultItem,
-  .fileItem {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .fileMeta strong,
-  .resultMeta strong {
-    white-space: normal;
-    word-break: break-word;
-  }
-
-  .heroPoints span {
-    font-size: 0.82rem;
-  }
-
-  .fileActions {
-    width: 100%;
+  .resultHead {
+    flex-direction: row;
     justify-content: space-between;
   }
 
   .resultButtons,
   .receiveActions {
-    width: 100%;
-    flex-direction: column;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 960px) {
+  .workflow {
+    gap: 20px;
   }
 
-  .secondaryButton,
-  .primaryButton {
-    width: 100%;
-  }
-
-  .wordmark {
-    margin: 0 0 10px 0;
-    font-size: clamp(2.4rem, 11vw, 3.8rem);
+  .steps,
+  .faqGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

@@ -364,7 +364,7 @@ export default function Home() {
                   </div>
                   <div className={styles.summaryActions}>
                     <button className={styles.primaryButton} type="submit" disabled={uploading}>
-                      {uploading ? "Creating token..." : "Create token"}
+                      {uploading ? "Sharing..." : "Share"}
                     </button>
                     <button
                       type="button"
