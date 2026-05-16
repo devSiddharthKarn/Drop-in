@@ -90,8 +90,10 @@ class PackageService {
                 );
             }
 
+            const link = (process.env.HOSTED_URL as string)+"?token="+token;
             const responseData = {
-                token: token
+                token: token,
+                link:link
             }
 
             return NextResponse.json(

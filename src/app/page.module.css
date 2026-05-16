@@ -386,6 +386,44 @@
   padding: 12px;
 }
 
+.tokenInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tokenLink {
+  color: var(--accent-strong);
+  font-size: 0.86rem;
+  word-break: break-all;
+}
+
+.tokenActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tokenInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.tokenLink {
+  color: var(--accent-strong);
+  font-size: 0.86rem;
+  word-break: break-all;
+}
+
+.tokenActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .tokenPlaceholder {
   border: 1px dashed rgba(15, 118, 110, 0.3);
   border-radius: 14px;
@@ -574,6 +612,26 @@
 
   .resultButtons,
   .receiveActions {
+    flex-direction: row;
+  }
+
+  .tokenPanel {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tokenActions {
+    flex-direction: row;
+  }
+
+  .tokenPanel {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tokenActions {
     flex-direction: row;
   }
 }
