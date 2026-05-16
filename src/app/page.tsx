@@ -19,32 +19,41 @@ type ApiResponse<T> = {
   error: unknown | null;
 };
 
+type SearchParams = {
+  token?: string;
+};
+
 type PageProps = {
-  searchParams?: {
-    token?: string;
-  };
+  searchParams?: SearchParams | Promise<SearchParams>;
 };
 
 export const dynamic = "force-dynamic";
 
 async function getOrigin() {
   const headersList = await headers();
-  const host = headersList.get("host");
-  const protocol = headersList.get("x-forwarded-proto") ?? "http";
+  const forwardedHost = headersList.get("x-forwarded-host");
+  const host = forwardedHost ?? headersList.get("host");
+  const forwardedProto = headersList.get("x-forwarded-proto");
+  const protocol = forwardedProto ?? (host?.includes("localhost") ? "http" : "https");
+
+  if (host) {
+    return `${protocol}://${host}`;
+  }
 
   if (process.env.HOSTED_URL) {
     return process.env.HOSTED_URL;
   }
 
-  if (!host) {
-    return "";
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
   }
 
-  return `${protocol}://${host}`;
+  return "";
 }
 
 export default async function Page({ searchParams }: PageProps) {
-  const tokenParam = searchParams?.token;
+  const resolvedSearchParams = await Promise.resolve(searchParams);
+  const tokenParam = resolvedSearchParams?.token;
   const initialToken = tokenParam ?? "";
   let initialFiles: FileEntry[] = [];
   let initialMessage = "";
@@ -79,6 +88,7 @@ export default async function Page({ searchParams }: PageProps) {
 
   return (
     <DropinClient
+      key={initialToken || "dropin"}
       initialToken={initialToken}
       initialFiles={initialFiles}
       initialMessage={initialMessage}

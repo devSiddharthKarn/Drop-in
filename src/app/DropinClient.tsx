@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ChangeEvent, DragEvent, FormEvent, useRef, useState } from "react";
+import { ChangeEvent, DragEvent, FormEvent, useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 
 type UploadedTokenResponse = {
@@ -78,6 +78,11 @@ function getFileTag(file: File) {
   return "FILE";
 }
 
+function parseToken(value: string) {
+  const token = Number(value.trim());
+  return Number.isFinite(token) ? token : null;
+}
+
 export default function DropinClient({
   initialToken = "",
   initialFiles = [],
@@ -97,6 +102,16 @@ export default function DropinClient({
   const [downloadingAll, setDownloadingAll] = useState(false);
   const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
   const [isDragging, setIsDragging] = useState(false);
+
+  useEffect(() => {
+    if (initialToken) {
+      document.getElementById("receive-section")?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [initialToken]);
+
+  const scrollToReceive = () => {
+    document.getElementById("receive-section")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const onFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFiles(Array.from(event.target.files ?? []));
@@ -184,6 +199,13 @@ export default function DropinClient({
       }
       setReceiveToken(trimmed);
       setReceiveMessage("Token pasted from clipboard.");
+      
+      const token = parseToken(trimmed);
+      if (token !== null) {
+        await fetchFilesForToken(token);
+      } else {
+        scrollToReceive();
+      }
     } catch {
       setReceiveMessage("Clipboard access blocked. Paste the token manually.");
     }
@@ -195,6 +217,7 @@ export default function DropinClient({
   };
 
   const fetchFilesForToken = async (token: number) => {
+    scrollToReceive();
     setReceiving(true);
     setReceiveMessage("Looking up files...");
     setReceivedFiles([]);
@@ -224,8 +247,8 @@ export default function DropinClient({
   const handleReceive = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const token = Number(receiveToken.trim());
-    if (!Number.isFinite(token)) {
+    const token = parseToken(receiveToken);
+    if (token === null) {
       setReceiveMessage("Enter a valid token number.");
       setReceivedFiles([]);
       return;
@@ -469,7 +492,7 @@ export default function DropinClient({
           </form>
         </article>
 
-        <article className={styles.panel}>
+        <article className={styles.panel} id="receive-section">
           <div className={styles.panelHead}>
             <h2>Use token to view and download files</h2>
             <p className={styles.panelCopy}>Paste the token below to see every shared file, then download one file or all at once.</p>
