@@ -29,8 +29,7 @@ class PackageService {
                 files.map((file) => {
                     return new Promise<UploadApiResponse>(async (resolve, reject) => {
                         try {
-                            const arrayBuffer = await file.arrayBuffer();
-                            const fileBuffer = Buffer.from(arrayBuffer);
+                            const fileBuffer = Buffer.from(await file.arrayBuffer());
 
                             const stream = cloudinary.uploader.upload_stream(
                                 {
