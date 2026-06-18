@@ -149,8 +149,6 @@ class PackageService {
 
             
             const resData = packages.map(pkg => {
-                console.log("PKG Name:",pkg.name);
-                console.log("PKG original name:",pkg.originalName);
                 return {
                     _id: pkg._id,
                     token: pkg.token,
