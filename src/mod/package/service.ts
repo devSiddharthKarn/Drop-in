@@ -35,8 +35,8 @@ class PackageService {
                                 {
                                     folder: "QShare",
                                     resource_type: "auto",
-                                    use_filename:true,
-                                    filename_override:file.name
+                                    use_filename: true,
+                                    filename_override: file.name
                                 },
                                 (error, result) => {
                                     if (error || !result) {
@@ -60,16 +60,16 @@ class PackageService {
             const token = generateUniqueToken();
             const now = new Date();
             const dbData = result.map(r => {
-                console.log("File has name:",r.original_filename);
+                console.log("File has name:", r.original_filename);
                 const data = {
                     token: token,
                     name: r.original_filename,
                     sizeInBytes: r.bytes.toString(),
 
-                    publicId:r.public_id,
-                    secureURL:r.secure_url,
-                    originalName:r.original_filename,
-                    resourceType:r.resource_type,
+                    publicId: r.public_id,
+                    secureURL: r.secure_url,
+                    originalName: r.original_filename,
+                    resourceType: r.resource_type,
 
                     url: r.secure_url,
                     uploadedAt: now,
@@ -89,10 +89,10 @@ class PackageService {
                 );
             }
 
-            const link = (process.env.HOSTED_URL as string)+"?token="+token;
+            const link = (process.env.HOSTED_URL as string) + "?token=" + token;
             const responseData = {
                 token: token,
-                link:link
+                link: link
             }
 
             return NextResponse.json(
@@ -147,7 +147,10 @@ class PackageService {
                 );
             }
 
+            
             const resData = packages.map(pkg => {
+                console.log("PKG Name:",pkg.name);
+                console.log("PKG original name:",pkg.originalName);
                 return {
                     _id: pkg._id,
                     token: pkg.token,
