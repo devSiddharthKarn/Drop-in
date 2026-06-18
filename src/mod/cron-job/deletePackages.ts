@@ -19,7 +19,7 @@ class CronJobs {
 
             if (!expiredPackages || expiredPackages.length == 0) {
                 return NextResponse.json(
-                    Respond(true, "Cron Executed" + expiredPackages.length + " jobs"),
+                    Respond(true, "Cron Executed " + expiredPackages.length + " jobs"),
                     {
                         status: StatusCodes.OK
                     }

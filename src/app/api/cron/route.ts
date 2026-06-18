@@ -1,21 +1,10 @@
 import { cronJobs } from "@/mod/cron-job/deletePackages";
 import { Respond } from "@/utils/res/response";
 import { StatusCodes } from "@/utils/StatusCode/StatusCodes";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     try {
-        const isCron =req.headers.get("x-vercel-cron");
-
-        if (isCron !== "1") {
-            return NextResponse.json(
-                Respond(false, "Unauthorized"),
-                {
-                    status: StatusCodes.UNAUTHORIZED
-                }
-            );
-        }
-
         const res: NextResponse = await cronJobs.deleteExpiredPackages();
         return res;
     } catch (error) {
