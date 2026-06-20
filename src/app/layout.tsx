@@ -63,14 +63,15 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="google-adsense-account" content="ca-pub-2072569471322100"/>
-      </head>
-      <body className={inter.className}>
         <Script
           async
           strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2072569471322100"
           crossOrigin="anonymous"
         />
+      </head>
+      <body className={inter.className}>
+        
         {children}
         </body>
     </html>
