@@ -123,7 +123,6 @@ class PackageService {
                 );
             }
 
-
             const packages = await db.select().from(Packages).where(
                 eq(Packages.token, token)
             );
