@@ -1,41 +1,52 @@
 # Drop-In
 
-**Share files with a token. Nothing more. Nothing less.**
+<p align="center">
+  <img src="videos/demo.gif" width="100%">
+</p>
 
-Drop-In is a file sharing platform built around a simple idea: uploading and sharing a file should take seconds, not minutes.
+<h3 align="center">
+Upload → Get Token → Share Token → Download
+</h3>
 
-Upload any file, receive a unique token, and share that token with anyone. The recipient simply enters the token and downloads the file instantly.
-
-No accounts.
-
-No sign-ups.
-
-No complicated sharing links.
-
-Just files and tokens.
+<p align="center">
+A file sharing platform that replaces links with simple tokens.
+</p>
 
 ---
 
-## What is Drop-In?
+## Screenshots
 
-Drop-In is a file sharing service that removes unnecessary friction from the sharing process.
+<p align="center">
+  <img src="images/home.png" width="100%">
+</p>
 
-Traditional platforms often require users to:
+<p align="center">
+  <img src="images/upload.png" width="100%">
+</p>
 
-* Create accounts
-* Manage permissions
-* Generate long sharing links
-* Navigate complex interfaces
+<p align="center">
+  <img src="images/download.png" width="100%">
+</p>
 
-Drop-In takes a different approach.
+---
 
-Every uploaded file is assigned a unique token. That token becomes the key to accessing the file.
+## Overview
 
-Share the token.
+Drop-In is a file sharing platform designed around a simple idea:
 
-Download the file.
+**Sharing a file should take seconds, not minutes.**
 
-That's it.
+Upload a file, receive a unique token, send the token to someone, and they can download the file instantly.
+
+No accounts.
+
+No registration.
+
+No sharing links.
+
+No unnecessary steps.
+
+Just a file and a token.
 
 ---
 
@@ -43,153 +54,136 @@ That's it.
 
 ### 1. Upload
 
-Upload a file using the upload button or simply drag and drop it into the upload area.
+Choose a file manually or drag and drop it into the upload area.
 
 ### 2. Receive a Token
 
-Drop-In instantly generates a unique access token for your file.
+After the upload is complete, Drop-In generates a unique token.
 
 Example:
 
 ```text
-2343242 (Numbers for Simplicity & Easy to Remember0)
+4839201
 ```
 
 ### 3. Share the Token
 
 Send the token through any platform:
 
-* WhatsApp
-* Messenger
-* Discord
-* Telegram
-* Email
-* SMS
+- WhatsApp
+- Messenger
+- Telegram
+- Discord
+- Email
+- SMS
 
 ### 4. Download
 
-Anyone with the token can retrieve the file immediately.
+Anyone with the token can retrieve and download the file instantly.
 
 ---
 
-## Product Screenshots
-
-### Landing Page
-
-![Landing Page](images/home.png)
-
-### Upload Experience
-
-![Upload Interface](images/upload.png)
-
-### Download Experience
-
-![Download Interface](images/download.png)
-
----
-
-## Product Demo
-
-Watch the complete upload-to-download workflow.
-
-[Watch Demo](videos/demo.mp4)
-
----
-
-## Why Use Drop-In?
+## Why Drop-In?
 
 ### Fast
 
-No registrations or setup processes.
-
-Upload and share within seconds.
+Upload a file and start sharing immediately.
 
 ### Simple
 
-Users only need a token.
-
-No links to copy.
-
-No permissions to configure.
+A token is easier to remember and share than a long URL.
 
 ### Accessible
 
-Files can be retrieved from any device with internet access.
+Retrieve files from any device with an internet connection.
 
 ### Frictionless
 
-Designed for people who simply want to send a file without dealing with unnecessary complexity.
+No accounts, onboarding, or permission management.
 
 ---
 
-## Typical Use Cases
+## Use Cases
 
-### Sharing Documents
+### Documents
 
-Send reports, notes, PDFs, and presentations quickly.
+Share PDFs, reports, notes, assignments, and presentations.
 
-### Sharing Images
+### Images
 
-Upload photos and share them instantly.
+Send photos and image collections quickly.
 
-### Sharing Source Code
+### Source Code
 
-Transfer project files, archives, and development resources.
+Transfer project archives, builds, and development resources.
 
-### Sharing Media
+### Media
 
-Share videos, recordings, and other large files without requiring recipients to create accounts.
+Share videos, recordings, and other large files through a simple token.
 
 ---
 
-## Upload Workflow
+## Upload Flow
 
 ```text
-File
-  │
-  ▼
+Select File
+     │
+     ▼
 Upload
-  │
-  ▼
+     │
+     ▼
 Token Generated
-  │
-  ▼
+     │
+     ▼
 Share Token
 ```
 
 ---
 
-## Download Workflow
+## Download Flow
 
 ```text
-Token
-  │
-  ▼
-Validation
-  │
-  ▼
-File Retrieved
-  │
-  ▼
+Receive Token
+      │
+      ▼
+Enter Token
+      │
+      ▼
+File Located
+      │
+      ▼
 Download
 ```
 
 ---
 
-## Built For Simplicity
+## Built With
 
-Drop-In focuses on one problem and solves it well:
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Cloudinary
 
-**Getting files from one person to another with as little friction as possible.**
+---
 
-No unnecessary features.
+## Philosophy
 
-No complicated onboarding.
+Most file-sharing platforms continue to add more dashboards, settings, permissions, and complexity.
 
-Just upload, share, and download.
+Drop-In focuses on a single task:
+
+**Getting a file from one person to another as quickly as possible.**
+
+Upload.
+
+Get a token.
+
+Share it.
+
+Download.
 
 ---
 
 ## License
 
-MIT License.
+MIT License
